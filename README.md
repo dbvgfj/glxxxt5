@@ -9,3 +9,9 @@ IF a.Privilege=B and a.PrivilegeAccess=Sys_Menu and a.PrivilegeOperation=Permit 
 查询Sys_Menu表中MenuName数据   </br>
 Print MenuName    </br>
 End   </br>
+
+
+select * from Sys_Menu where MenuID=(    </br>
+select PrivilegeAccessKey from CF_Privilege where PrivilegeAccess=Sys_Menu and PrivilegeOperation=Permit and PrivilegeMasterKey=(   </br>
+select RoleID from CF_UserRole where UserID=(    </br>
+select UserID from CF_User where LoginName=test1)))    </br>
