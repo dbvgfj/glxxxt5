@@ -1,5 +1,5 @@
-## 第五次作业
-#查询用户test1可以查看的页面
+# 第五次作业
+##查询用户test1可以查看的页面
 Begin   </br>
 查询CF_User表中所有数据   </br>
 IF LoginName=test1 则 查询该记录UserID数据记为A   </br>
@@ -14,13 +14,14 @@ End   </br>
 select * from Sys_Menu where MenuID=(    </br>
 select PrivilegeAccessKey from CF_Privilege where PrivilegeAccess=Sys_Menu and PrivilegeOperation=Permit and PrivilegeMasterKey=(   </br>
 select RoleID from CF_UserRole where UserID=(    </br>
-select UserID from CF_User where LoginName=test1)))    </br>
+select UserID from CF_User where LoginName=test1)))    
+</br>
 ![1](https://cloud.githubusercontent.com/assets/16076941/19847496/42cbb0fa-9f82-11e6-8994-2377c792492b.png)
 
 
 </br>
 </br></br></br>
-#对订单(order)页面中的操作权限
+##对订单(order)页面中的操作权限
 Begin   </br>
 查询CF_User表中所有数据    </br>
 IF LoginName=test1 则 查询该记录UserID数据记为A    </br>
@@ -36,4 +37,5 @@ select a.ManuName from Sys_Menu as a,CF_Privilege as b where a.MenuID=b.Privileg
 b.PrivilegeAccess=Sys_Menu and b.PrivilegeOperation=Permit and b.PrivilegeMasterKey=(   </br>
 select RoleID from CF_UserRole where UserID=(    </br>
 select UserID from CF_User where LoginName=test1)))    </br>
+</br>
 ![2](https://cloud.githubusercontent.com/assets/16076941/19847570/d7a513b0-9f82-11e6-9584-2d8e7285e373.png)
